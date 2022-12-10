@@ -12,3 +12,7 @@ express-validator is a set of express.js middlewares that wraps validator.js val
 
 
 
+bcryptjs
+hashing a password
+
+jwt
