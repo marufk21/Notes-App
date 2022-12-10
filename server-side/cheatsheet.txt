@@ -1,0 +1,14 @@
+express
+mongoose
+nodemon 
+
+schemas
+routes
+json parsing
+
+express validator package:
+express-validator is a set of express.js middlewares that wraps validator.js validator and sanitizer functions. 
+
+
+
+
