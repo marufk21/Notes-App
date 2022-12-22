@@ -1,0 +1,30 @@
+express
+mongoose
+nodemon 
+
+schemas
+routes
+json parsing
+
+// Authentication 
+
+express validator package: express-validator is a set of express.js middlewares that wraps validator.js validator and sanitizer functions. 
+
+bcryptjs
+hashing a password
+
+jwt
+
+
+{
+  "name": "gokboru",
+  "email": "gokboru1000@gmail.com",
+  "password": "gokboru"
+}
+
+{
+{
+  "authtoken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNhNDgzZWQzMzVjYWE0Y2U4ZWIyOWNjIn0sImlhdCI6MTY3MTcyNzEwNn0.cjBtpA6xH06hmrwXeYiASEdM5-MztMtl5lcY49_j3zA"
+}
+
+// CRUD : Create Read Update Delete
