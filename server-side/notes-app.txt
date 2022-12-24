@@ -1,21 +1,3 @@
-express
-mongoose
-nodemon 
-
-schemas
-routes
-json parsing
-
-// Authentication 
-
-express validator package: express-validator is a set of express.js middlewares that wraps validator.js validator and sanitizer functions. 
-
-bcryptjs
-hashing a password
-
-jwt
-
-
 {
   "name": "gokboru",
   "email": "gokboru1000@gmail.com",
@@ -23,8 +5,25 @@ jwt
 }
 
 {
-{
-  "authtoken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNhNDgzZWQzMzVjYWE0Y2U4ZWIyOWNjIn0sImlhdCI6MTY3MTcyNzEwNn0.cjBtpA6xH06hmrwXeYiASEdM5-MztMtl5lcY49_j3zA"
+
+"authtoken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNhNDgzZWQzMzVjYWE0Y2U4ZWIyOWNjIn0sImlhdCI6MTY3MTcyNzEwNn0.cjBtpA6xH06hmrwXeYiASEdM5-MztMtl5lcY49_j3zA"
+
 }
 
-// CRUD : Create Read Update Delete
+What is Mern Stack?
+
+Setup Backend:
+
+Authentication for Users:  REST API - Node | Express | MongoDB(Mongoose)
+                           Web Security - BcryptJS | JWT
+
+CRUD for Notes :              
+
+
+
+package.json   : "bcryptjs": "^2.4.3",
+                 "express": "^4.18.2",
+                 "express-validator": "^6.14.2",
+                 "jsonwebtoken": "^8.5.1",
+                 "mongoose": "^6.8.0",
+                 "nodemon": "^2.0.20"
