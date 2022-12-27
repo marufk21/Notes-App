@@ -3,17 +3,19 @@ import { Routes, Route } from 'react-router-dom'
 import Navbar from './Components/Navbar'
 import Home from './Components/Home'
 import About from './Components/About'
-import NoteState from './Context-API/Notes/noteState'
+import Alertt from './Components/Alertt'
+import NoteState from './Context-API/Notes/NoteState'
 
 const App = () => {
   return (
     <>
-    <NoteState>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-      </Routes>
+      <NoteState>
+        <Navbar />
+        <Alertt message={' Heyy I am Alert'} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
+        </Routes>
       </NoteState>
     </>
   )

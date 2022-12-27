@@ -1,11 +1,77 @@
 import NoteContext from './noteContext'
+import React, { useState } from 'react'
+
 const NoteState = (props) => {
-  const s1 = {
-    name: 'maruf',
-    class: '5b',
-  }
+  const notesInitial = [
+    {
+      _id: '61322f19553781a8c1a8d0e06',
+      user: '6131dc5e3e4037cd4734a066',
+      title: 'My Title',
+      description: 'Please wake up early',
+      tag: 'personal',
+      date: '2021-09-03T14:20:09.509Z',
+      __v: 0,
+    },
+    {
+      _id: '61322f119553781a8ca8d0e08',
+      user: '6131dc5e3e4037cd4734a066',
+      title: 'My Title',
+      description: 'Please wake up early',
+      tag: 'personal',
+      date: '2021-09-03T14:20:09.668Z',
+      __v: 0,
+    },
+    {
+      _id: '61322f139553781a8ca8d0e08',
+      user: '6131dc5e3e4037cd4734a066',
+      title: 'My Title',
+      description: 'Please wake up early',
+      tag: 'personal',
+      date: '2021-09-03T14:20:09.668Z',
+      __v: 0,
+    },
+    {
+      _id: '61322f195537381a8ca8d0e08',
+      user: '6131dc5e3e4037cd4734a066',
+      title: 'My Title',
+      description: 'Please wake up early',
+      tag: 'personal',
+      date: '2021-09-03T14:20:09.668Z',
+      __v: 0,
+    },
+    {
+      _id: '61322f195537831a8ca8d0e08',
+      user: '6131dc5e3e4037cd4734a066',
+      title: 'My Title',
+      description: 'Please wake up early',
+      tag: 'personal',
+      date: '2021-09-03T14:20:09.668Z',
+      __v: 0,
+    },
+    {
+      _id: '61322f195537381a83ca8d0e08',
+      user: '6131dc5e3e4037cd4734a066',
+      title: 'My Title',
+      description: 'Please wake up early',
+      tag: 'personal',
+      date: '2021-09-03T14:20:09.668Z',
+      __v: 0,
+    },
+    {
+      _id: '61322f19553781a83ca8d0e08',
+      user: '6131dc5e3e4037cd4734a066',
+      title: 'My Title',
+      description: 'Please wake up early',
+      tag: 'personal',
+      date: '2021-09-03T14:20:09.668Z',
+      __v: 0,
+    },
+  ]
+  const [notes, setNotes] = useState(notesInitial)
   return (
-    <NoteContext.Provider value={s1}>{props.children}</NoteContext.Provider>
+    <NoteContext.Provider value={{ notes, setNotes }}>
+      {props.children}
+    </NoteContext.Provider>
   )
 }
 
