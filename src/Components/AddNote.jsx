@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import noteContext from '../Context-API/Notes/noteContext'
-import { Label, TextInput, Checkbox, Button } from 'flowbite-react'
+import { Label, TextInput, Button } from 'flowbite-react'
 
 const AddNote = () => {
   const context = useContext(noteContext)
