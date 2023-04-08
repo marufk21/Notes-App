@@ -1,4 +1,4 @@
-# Notes App
+# QuickNote
 
 The Notes App is a web application built using the MERN stack that allows users to create, view, edit, and delete notes.
 
