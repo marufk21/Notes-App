@@ -1,9 +1,9 @@
-import React, { useContext} from 'react';
-import noteContext from '../Context-API/Notes/noteContext';
-import { AiFillDelete, AiFillEdit } from 'react-icons/ai';
+import React, { useContext } from "react";
+import noteContext from "../Context-API/Notes/noteContext";
+import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 
 const Noteitem = (props) => {
-  const { note } = props;
+  const { note, updateNote } = props;
   const context = useContext(noteContext);
   const { deleteNote } = context;
 
@@ -19,7 +19,11 @@ const Noteitem = (props) => {
           <div className="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
             {/* Edit Icon */}
             <span className="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-              <AiFillEdit />
+              <AiFillEdit
+                onClick={() => {
+                  updateNote(note);
+                }}
+              />
             </span>
             {/* Delete Icon */}
             <span className="text-gray-400 inline-flex items-center leading-none text-sm">
