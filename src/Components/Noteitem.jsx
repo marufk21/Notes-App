@@ -3,9 +3,9 @@ import noteContext from "../Context-API/Notes/noteContext";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 
 const Noteitem = (props) => {
-  const { note, updateNote } = props;
   const context = useContext(noteContext);
   const { deleteNote } = context;
+  const { note, updateNote } = props;
 
   return (
     <>

@@ -2,7 +2,7 @@ import NoteContext from "./noteContext";
 import React, { useState } from "react";
 
 const NoteState = (props) => {
-  const host = "http://localhost:3000";
+  const host = "http://localhost:5000";
   const notesInitial = [];
   const [notes, setNotes] = useState(notesInitial);
 
@@ -18,7 +18,6 @@ const NoteState = (props) => {
       },
     });
     const json = await response.json();
-    console.log(json);
     setNotes(json);
   };
 
@@ -35,20 +34,7 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({ title, description, tag }),
     });
-
-    const json = await response.json();
-    console.log(json);
-
-    console.log("Adding a new note");
-    const note = {
-      _id: "61322f119553781a8ca8d0e08",
-      user: "6131dc5e3e4037cd4734a0664",
-      title: title,
-      description: description,
-      tag: tag,
-      date: "2021-09-03T14:20:09.668Z",
-      __v: 0,
-    };
+    const note = await response.json();
     setNotes(notes.concat(note));
   };
 
@@ -63,9 +49,8 @@ const NoteState = (props) => {
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNhNDgzZWQzMzVjYWE0Y2U4ZWIyOWNjIn0sImlhdCI6MTY3MTcyNzEwNn0.cjBtpA6xH06hmrwXeYiASEdM5-MztMtl5lcY49_j3zA",
       },
     });
+
     const json = response.json();
-    console.log(json);
-    console.log("Deleting the note with id" + id);
     const newNotes = notes.filter((note) => {
       return note._id !== id;
     });
@@ -85,7 +70,6 @@ const NoteState = (props) => {
       body: JSON.stringify({ title, description, tag }),
     });
     const json = await response.json();
-    console.log(json);
 
     let newNotes = JSON.parse(JSON.stringify(notes));
 
