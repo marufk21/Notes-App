@@ -58,7 +58,7 @@ const Notes = () => {
       <button
         ref={ref}
         type="button"
-        class="btn btn-primary d-none"
+        className="btn btn-primary d-none"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
       >
@@ -66,34 +66,34 @@ const Notes = () => {
       </button>
 
       <div
-        class="modal fade"
+        className="modal fade"
         id="exampleModal"
         tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel">
                 Edit Note
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <form class="my-3">
-                <div class="mb-3">
-                  <label for="title" class="form-label">
+            <div className="modal-body">
+              <form className="my-3">
+                <div className="mb-3">
+                  <label htmlFor="title" className="form-label">
                     Title
                   </label>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="etitle"
                     name="etitle"
                     value={note.etitle}
@@ -103,13 +103,13 @@ const Notes = () => {
                     required
                   />
                 </div>
-                <div class="mb-3">
-                  <label for="description" class="form-label">
+                <div className="mb-3">
+                  <label htmlFor="description" className="form-label">
                     Description
                   </label>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="edescription"
                     name="edescription"
                     value={note.edescription}
@@ -118,13 +118,13 @@ const Notes = () => {
                     required
                   />
                 </div>
-                <div class="mb-3">
-                  <label for="tag" class="form-label">
+                <div className="mb-3">
+                  <label htmlFor="tag" className="form-label">
                     Tag
                   </label>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="etag"
                     name="etag"
                     value={note.etag}
@@ -133,11 +133,11 @@ const Notes = () => {
                 </div>
               </form>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 ref={refClose}
                 type="button"
-                class="btn btn-secondary"
+                className="btn btn-secondary"
                 data-bs-dismiss="modal"
               >
                 Close
@@ -148,7 +148,7 @@ const Notes = () => {
                 }
                 onClick={handleClick}
                 type="button"
-                class="btn btn-primary"
+                className="btn btn-primary"
               >
                 Update Note
               </button>
@@ -157,9 +157,9 @@ const Notes = () => {
         </div>
       </div>
 
-      <div class="row my-3">
+      <div className="row my-3">
         <h2>Your Notes</h2>
-        <div class="container mx-2">
+        <div className="container mx-2">
           {notes.length === 0 && "No notes to display"}
         </div>
         {notes.map((note) => {
