@@ -1,16 +1,14 @@
 import React from "react";
 import { Button, Navbar } from "flowbite-react";
-import { Link, NavLink} from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem('token')
+    localStorage.removeItem("token");
     navigate("/login");
-
-  }
+  };
   return (
     <Navbar className="bg-gray-800">
       <Navbar.Brand href=" ">
@@ -54,8 +52,9 @@ const NavBar = () => {
           <Navbar.Toggle />
         </div>
       ) : (
-        <Link onClick={handleLogout} className="mr-2">
+        <Link className="mr-2">
           <Button
+            onClick={handleLogout}
             gradientMonochrome="teal"
             className="bg-teal-500 hover:bg-teal-600"
           >
