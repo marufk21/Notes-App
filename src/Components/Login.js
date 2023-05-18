@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { Button, Label, TextInput } from "flowbite-react";
 
 const Login = (props) => {
-  const [credentials, setCredentials] = useState({ email: "", password: "" });
   const navigate = useNavigate();
+
+  const [credentials, setCredentials] = useState({ email: "", password: "" });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,9 +23,10 @@ const Login = (props) => {
     console.log(json);
     if (json.success) {
       // Save the auth token and redirect
+      props.showAlert("Logged in Successfully", "success");
       navigate("/");
     } else {
-      alert("Invalid credentials");
+      props.showAlert("Invalid Credentials", "danger");
     }
   };
 

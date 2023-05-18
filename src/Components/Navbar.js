@@ -1,8 +1,16 @@
 import React from "react";
 import { Button, Navbar } from "flowbite-react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('token')
+    navigate("/login");
+
+  }
   return (
     <Navbar className="bg-gray-800">
       <Navbar.Brand href=" ">
@@ -25,25 +33,36 @@ const NavBar = () => {
           About
         </NavLink>
       </Navbar.Brand>
-      <div className="flex md:order-2">
-        <Link to="/login" className="mr-2">
+      {!localStorage.getItem("token") ? (
+        <div className="flex md:order-2">
+          <Link to="/login" className="mr-2">
+            <Button
+              gradientMonochrome="teal"
+              className="bg-teal-500 hover:bg-teal-600"
+            >
+              Login
+            </Button>
+          </Link>
+          <Link to="/signup" className="mr-2">
+            <Button
+              gradientMonochrome="teal"
+              className="bg-teal-500 hover:bg-teal-600"
+            >
+              SignUp
+            </Button>
+          </Link>
+          <Navbar.Toggle />
+        </div>
+      ) : (
+        <Link onClick={handleLogout} className="mr-2">
           <Button
             gradientMonochrome="teal"
             className="bg-teal-500 hover:bg-teal-600"
           >
-            Login
+            Logout
           </Button>
         </Link>
-        <Link to="/signup" className="mr-2">
-          <Button
-            gradientMonochrome="teal"
-            className="bg-teal-500 hover:bg-teal-600"
-          >
-            SignUp
-          </Button>
-        </Link>
-        <Navbar.Toggle />
-      </div>
+      )}
     </Navbar>
   );
 };
