@@ -1,11 +1,12 @@
-const mongoose = require('mongoose')
-mongoose.set('strictQuery', false)
+const mongoose = require("mongoose");
+mongoose.set("strictQuery", false);
 
-const mongoURI = 'mongodb://127.0.0.1:27017/notes-app'
+const DB = process.env.DATABASE;
 
-main().catch((err) => console.log(err))
+
+main().catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect(mongoURI);
+  await mongoose.connect(DB);
 }
-console.log('Connection is Successful');
+console.log("Connection is Successful");
