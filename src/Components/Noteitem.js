@@ -30,6 +30,7 @@ const Noteitem = (props) => {
               <AiFillDelete
                 onClick={() => {
                   deleteNote(note._id);
+                  props.showAlert("Deleted Successfully", "success");
                 }}
               />
             </span>
