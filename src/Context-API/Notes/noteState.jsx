@@ -2,7 +2,11 @@ import NoteContext from "./noteContext";
 import React, { useState } from "react";
 
 const NoteState = (props) => {
+<<<<<<< HEAD
   const host = "http://http://localhost:3000";
+=======
+  const host = "http://quicknote-api.onrender.com";
+>>>>>>> 4b342b5b7b1b23cb683731d54b2aba20d9b10852
   const notesInitial = [];
   const [notes, setNotes] = useState(notesInitial);
 

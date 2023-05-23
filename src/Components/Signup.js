@@ -14,7 +14,11 @@ const Signup = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // const { name, email, password, cpassword } = credentials;
+<<<<<<< HEAD
     const response = await fetch("http://http://localhost:3000/api/auth/createuser", {
+=======
+    const response = await fetch("http://quicknote-api.onrender.com/api/auth/createuser", {
+>>>>>>> 4b342b5b7b1b23cb683731d54b2aba20d9b10852
       method: "POST",
       headers: {
         "Content-Type": "application/json",
