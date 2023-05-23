@@ -1,12 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const dotenv = require("dotenv");
-
-dotenv.config({ path: "./.env" });
+const port = 4000;
 require("./db/connect");
-
-const PORT = 5000;
 
 app.use(express.json());
 
@@ -17,6 +13,6 @@ app.use(express.json());
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/notes", require("./routes/notes"));
 
-app.listen(PORT, () => {
-  console.log(`Notes app listening on PORT ${PORT}`);
+app.listen(port, () => {
+  console.log(`Notes app listening on port ${port}`);
 });

@@ -13,21 +13,19 @@ const Signup = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { name, email, password, cpassword } = credentials;
-    const response = await fetch(
-      "http://localhost:3000/api/auth/createuser",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: credentials.name,
-          email: credentials.email,
-          password: credentials.password,
-        }),
-      }
-    );
+    // const { name, email, password, cpassword } = credentials;
+    const response = await fetch("http://localhost:4000/api/auth/createuser", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: credentials.name,
+        email: credentials.email,
+        password: credentials.password,
+      }),
+    });
+
     const json = await response.json();
     console.log(json);
     if (json.success) {

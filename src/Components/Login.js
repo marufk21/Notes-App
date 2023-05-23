@@ -4,12 +4,11 @@ import { Button, Label, TextInput } from "flowbite-react";
 
 const Login = (props) => {
   const navigate = useNavigate();
-
   const [credentials, setCredentials] = useState({ email: "", password: "" });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://quicknote-api.onrender.com/api/auth/login", {
+    const response = await fetch("http://localhost:4000/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -23,7 +22,7 @@ const Login = (props) => {
     console.log(json);
     if (json.success) {
       // Save the auth token and redirect
-      localStorage.setItem('token', json.authtoken)
+      localStorage.setItem("token", json.authtoken);
       props.showAlert("Logged in Successfully", "success");
       navigate("/");
     } else {

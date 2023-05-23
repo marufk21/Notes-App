@@ -4,7 +4,7 @@ const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { body, validationResult } = require("express-validator");
-const fetchuser = require("../middleware/fetchuser");
+const fetchuser = require('../middleware/fetchUser');
 
 const JWT_SECRET = "marufisagoodb$oy";
 
