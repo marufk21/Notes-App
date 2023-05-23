@@ -13,7 +13,7 @@ const Signup = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { name, email, password, cpassword } = credentials;
+    // const { name, email, password, cpassword } = credentials;
     const response = await fetch("http://quicknote-api.onrender.com/api/auth/createuser", {
       method: "POST",
       headers: {
