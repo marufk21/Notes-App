@@ -38,7 +38,6 @@ const Notes = (props) => {
       etag: currentNote.tag,
     });
     props.showAlert("Updated Successfully", "success");
-    console.log("its works");
   };
 
   const handleClick = (e) => {
@@ -72,7 +71,6 @@ const Notes = (props) => {
       >
         Launch demo modal
       </button>
-
       <div
         className="modal fade"
         id="exampleModal"
@@ -80,10 +78,13 @@ const Notes = (props) => {
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div className="modal-dialog">
+        <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">
+            <div className="modal-header bg-gradient-to-r from-blue-800 to-indigo-500">
+              <h5
+                className="font-semibold modal-title text-white"
+                id="exampleModalLabel"
+              >
                 Edit Note
               </h5>
               <button
@@ -96,9 +97,7 @@ const Notes = (props) => {
             <div className="modal-body">
               <form className="my-3">
                 <div className="mb-3">
-                  <label htmlFor="title" className="form-label">
-                    Title
-                  </label>
+                  <label htmlFor="title" className="form-label"></label>
                   <input
                     type="text"
                     className="form-control"
@@ -109,12 +108,11 @@ const Notes = (props) => {
                     onChange={onChange}
                     minLength={5}
                     required
+                    placeholder="Title"
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="description" className="form-label">
-                    Description
-                  </label>
+                  <label htmlFor="description" className="form-label"></label>
                   <input
                     type="text"
                     className="form-control"
@@ -124,9 +122,10 @@ const Notes = (props) => {
                     onChange={onChange}
                     minLength={5}
                     required
+                    placeholder="Description"
                   />
                 </div>
-                <div className="mb-3">
+                <div className="mb-3 d-none">
                   <label htmlFor="tag" className="form-label">
                     Tag
                   </label>
@@ -143,32 +142,34 @@ const Notes = (props) => {
             </div>
             <div className="modal-footer">
               <button
-                ref={refClose}
-                type="button"
-                className="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button
                 disabled={
                   note.etitle.length < 5 || note.edescription.length < 5
                 }
                 onClick={handleClick}
                 type="button"
-                className="btn btn-primary"
+                className="p-2 text-white rounded-2xl font-semibold bg-blue-500 hover:bg-blue-700"
               >
                 Update Note
+              </button>
+              <button
+                ref={refClose}
+                type="button"
+                data-bs-dismiss="modal"
+                className="p-2 text-white rounded-2xl font-semibold bg-blue-500 hover:bg-blue-700"
+              >
+                Close
               </button>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="row my-3">
-        <h2>Your Notes</h2>
-        <div className="container mx-2">
-          {notes.length === 0 && "No notes to display"}
+      <div className="flex justify-center row mt-5 my-3">
+        <h2 className="flex justify-center text-4xl font-bold dark:text-white">
+          My Notes
+        </h2>
+        <div className="flex justify-center mt-7 text-2xl font-semibold">
+          {notes.length === 0 && "Add a note to display"}
         </div>
         {notes.map((note) => {
           return (

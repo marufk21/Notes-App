@@ -11,50 +11,55 @@ const AddNote = (props) => {
   const onChange = (e) => {
     setNote({ ...note, [e.target.name]: e.target.value });
   };
+
   const handleClick = (e) => {
     e.preventDefault();
-    addNote(note.title, note.description, note.tag);
-    setNote({ title: "", description: "", tag: "" });
-    props.showAlert("Added Successfully", "success");
-
+    if (note.title.length < 5 || note.description.length < 5) {
+      props.showAlert(
+        "Title and description must be at least 5 characters long.",
+        "error"
+      );
+    } else {
+      addNote(note.title, note.description, note.tag);
+      setNote({ title: "", description: "", tag: "" });
+      props.showAlert("Added Successfully", "success");
+    }
   };
 
   return (
-    <>
-      <form className="flex flex-col gap-4">
-        <div>
-          {/* Title */}
-          <div className="mb-2 block">
-            <Label htmlFor="title" value="Title" />
-          </div>
-          <TextInput
-            type="text"
-            id="title"
-            name="title"
-            minLength={5}
-            required
-            value={note.title}
-            onChange={onChange}
-          />
+    <div className="flex justify-center">
+      <form className="flex flex-col w-4/5">
+        <h1 className="text-4xl font-bold dark:text-white">Take a Note</h1>
+        <div className="mb-2 block">
+          <Label htmlFor="title" />
         </div>
+        <TextInput
+          type="text"
+          id="title"
+          name="title"
+          minLength={5}
+          required
+          placeholder="Add a title"
+          value={note.title}
+          onChange={onChange}
+        />
         <div>
-          {/* Description */}
-          <div className="mb-2 block">
-            <Label htmlFor="description" value="Description" />
+          <div className="mb-2 block ">
+            <Label htmlFor="description" />
           </div>
           <TextInput
             type="text"
             id="description"
             name="description"
+            placeholder="Add a description"
             value={note.description}
             onChange={onChange}
             minLength={5}
             required
           />
         </div>
-        {/* Tags */}
-        <div className="mb-2 block">
-          <Label htmlFor="tags" value="Tag" />
+        <div className="mb-2 hidden">
+          <Label htmlFor="tag" />
           <TextInput
             type="text"
             id="tag"
@@ -65,9 +70,8 @@ const AddNote = (props) => {
             required
           />
         </div>
-
-        {/* Submit */}
         <Button
+          className="mt-6 font-semibold"
           disabled={note.title.length < 5 || note.description.length < 5}
           type="submit"
           onClick={handleClick}
@@ -75,7 +79,7 @@ const AddNote = (props) => {
           Add Note
         </Button>
       </form>
-    </>
+    </div>
   );
 };
 

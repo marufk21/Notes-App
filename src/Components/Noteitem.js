@@ -9,24 +9,24 @@ const Noteitem = (props) => {
 
   return (
     <>
-      <div className="p-4 lg:w-1/4">
-        <div className="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
-          <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+      <div className="p-3 lg:w-2/6">
+        <div className="h-full w-full bg-gray-100 bg-opacity-75 px-8 pt-10 pb-16 rounded-lg overflow-hidden text-center relative">
+          <h2 className="tracking-widest text-lg title-font font-bold text-gray-400 mb-3">
             {note.title}
           </h2>
-          <p className="leading-relaxed mb-3">{note.description}</p>
+          <p className="mb-4 leading-relaxed  font-semibold">
+            {note.description}
+          </p>
 
-          <div className="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
-            {/* Edit Icon */}
-            <span className="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+          <div className="text-center mt-auto leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
+            <span className="text-gray-400 mr-3 inline-flex items-center leading-none text-xl pr-2 py-1 border-r-2 border-gray-200">
               <AiFillEdit
                 onClick={() => {
                   updateNote(note);
                 }}
               />
             </span>
-            {/* Delete Icon */}
-            <span className="text-gray-400 inline-flex items-center leading-none text-sm">
+            <span className="text-gray-400 inline-flex items-center leading-none text-xl pl-2">
               <AiFillDelete
                 onClick={() => {
                   deleteNote(note._id);

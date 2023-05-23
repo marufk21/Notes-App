@@ -35,38 +35,38 @@ const Login = (props) => {
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <div>
-          <div className="mb-2 block">
-            <Label htmlFor="email1" value="Your email" />
-          </div>
-          <TextInput
-            id="email"
-            type="email"
-            name="email"
-            value={credentials.email}
-            onChange={onChange}
-            placeholder=""
-            required={true}
-          />
+    <div className="flex justify-center mt-8">
+      <form onSubmit={handleSubmit} className="flex flex-col w-4/5">
+        <h1 className="text-4xl font-bold dark:text-white">Log In</h1>
+        <div className="mb-2">
+          <Label htmlFor="email"></Label>
         </div>
-        <div>
-          <div className="mb-2 block">
-            <Label htmlFor="password" name="password" value="Your password" />
-          </div>
-          <TextInput
-            id="password"
-            type="password"
-            name="password"
-            value={credentials.password}
-            onChange={onChange}
-            required={true}
-          />
+        <TextInput
+          id="email"
+          type="email"
+          name="email"
+          value={credentials.email}
+          required
+          placeholder="Email"
+          onChange={onChange}
+        />
+        <div className="mb-2">
+          <Label htmlFor="password"></Label>
         </div>
-        <Button type="submit">Submit</Button>
+        <TextInput
+          id="password"
+          type="password"
+          name="password"
+          value={credentials.password}
+          required
+          placeholder="Password"
+          onChange={onChange}
+        />
+        <Button className="mt-4 font-semibold" type="submit">
+          Log In
+        </Button>
       </form>
-    </>
+    </div>
   );
 };
 

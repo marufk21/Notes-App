@@ -13,7 +13,6 @@ const Signup = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // const { name, email, password, cpassword } = credentials;
     const response = await fetch("http://localhost:4000/api/auth/createuser", {
       method: "POST",
       headers: {
@@ -42,67 +41,60 @@ const Signup = (props) => {
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <div>
-          <div className="mb-2 block">
-            <Label htmlFor="name" value="Your Name" />
-          </div>
+    <div className="flex justify-center">
+      <form onSubmit={handleSubmit} className="flex flex-col w-4/5">
+        <h1 className="text-4xl font-bold dark:text-white">Sign Up</h1>
+        <div className="mb-2">
+          <Label htmlFor="name"></Label>
           <TextInput
             id="name"
             type="text"
             name="name"
-            onChange={onChange}
-            placeholder=""
+            placeholder="Name"
             required={true}
+            onChange={onChange}
           />
         </div>
-        <div>
-          <div className="mb-2 block">
-            <Label htmlFor="email" value="Your email" />
-          </div>
+        <div className="mb-2">
+          <Label htmlFor="email"></Label>
           <TextInput
             id="email"
             type="email"
             name="email"
-            onChange={onChange}
-            placeholder=""
             required={true}
+            placeholder="Email"
+            onChange={onChange}
           />
         </div>
-        <div>
-          <div className="mb-2 block">
-            <Label htmlFor="password" name="password" value="Your password" />
-          </div>
+        <div className="mb-2">
+          <Label htmlFor="password"></Label>
           <TextInput
             id="password"
             type="password"
             name="password"
-            onChange={onChange}
             minLength={4}
             required={true}
+            placeholder="Password"
+            onChange={onChange}
           />
         </div>
-        <div>
-          <div className="mb-2 block">
-            <Label
-              htmlFor="cpassword"
-              name="password"
-              value="Confirm Password"
-            />
-          </div>
+        <div className="mb-2">
+          <Label htmlFor="cpassword"></Label>
           <TextInput
             id="cpassword"
             type="password"
             name="cpassword"
-            onChange={onChange}
             minLength={4}
             required={true}
+            placeholder="Confirm Password"
+            onChange={onChange}
           />
         </div>
-        <Button type="submit">Submit</Button>
+        <Button className="mt-4 font-semibold" type="submit">
+          Sign Up
+        </Button>
       </form>
-    </>
+    </div>
   );
 };
 

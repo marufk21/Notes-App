@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
-import About from "./Components/About";
 import Alert from "./Components/Alert";
 import NoteState from "./Context-API/Notes/noteState";
 import Login from "./Components/Login";
@@ -27,7 +26,6 @@ const App = () => {
         <Alert alert={alert} />
         <Routes>
           <Route path="/" element={<Home showAlert={showAlert} />} />
-          <Route path="about" element={<About />} />
           <Route path="login" element={<Login showAlert={showAlert} />} />
           <Route path="signup" element={<Signup showAlert={showAlert} />} />
         </Routes>
