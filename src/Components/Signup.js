@@ -20,9 +20,9 @@ const Signup = (props) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: credentials.name,
-        email: credentials.email,
-        password: credentials.password,
+        "name": credentials.name,
+        "email": credentials.email,
+        "password": credentials.password,
       }),
     });
 
