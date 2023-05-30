@@ -46,6 +46,7 @@ const NoteState = (props) => {
         authtoken: localStorage.getItem("token"),
       },
     });
+    console.log(response);
 
     // const json = response.json();
     const newNotes = notes.filter((note) => {
@@ -65,6 +66,7 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({ title, description, tag }),
     });
+    console.log(response);
     // const json = await response.json();
 
     let newNotes = JSON.parse(JSON.stringify(notes));
