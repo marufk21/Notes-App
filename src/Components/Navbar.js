@@ -39,7 +39,7 @@ const NavBar = () => {
           </Link>
         </div>
       ) : (
-        <Link to="/" className="mr-2">
+        <Link to="/login" className="mr-2">
           <Button
             onClick={handleLogout}
             gradientMonochrome="red"
