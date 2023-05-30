@@ -2,7 +2,7 @@
 
 The Notes App is a feature-rich web application built with the MERN stack. It allows users to securely create, view, edit, and delete notes and where user can login and signup to see their specific notes. The app ensures data privacy. Key features include intuitive note creation, organized note viewing, easy note editing and deletion. It provides a seamless and secure platform for efficient note management.
 
-Link - 
+Link - https://myquicknotes.netlify.app
 
 
 ## Technologies Used

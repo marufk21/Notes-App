@@ -163,8 +163,7 @@ const Notes = (props) => {
           </div>
         </div>
       </div>
-
-      <div className="flex justify-center row mt-5 my-3">
+      <div className="flex justify-center row mt-5 my-3 overflow-x-hidden">
         <h2 className="flex justify-center text-4xl font-bold dark:text-white">
           My Notes
         </h2>
