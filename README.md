@@ -41,7 +41,7 @@ Additional packages used:
 
 ## Upcoming Features
 
-- Improving UI and UX.
+- Improving UI and UX
 - Add Dark Mode
 
 ## Contributing
